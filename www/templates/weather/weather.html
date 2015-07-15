@@ -1,0 +1,38 @@
+<ion-view view-title="{{city}}">
+  <ion-content>
+    <h1 class='centerHeader'>Simple Weather</h1>
+    <div class="list card">
+
+  <div class="item item-avatar">
+    <img class="icon" src="{{pic}}"></img>
+  </div>
+
+  <div class="item item-body">
+    <p>
+      {{weekSummary}}
+    </p>
+    <p>
+      <p class="subdued">{{currentTemp}} °F</p>
+      <p class="subdued">{{humidity}}% Humidity</p>
+      <p class="subdued">{{}}</p>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-calendar"></i>
+      Weekly
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-chevron-up"></i>
+      Daily
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-clock"></i>
+      Hourly
+    </a>
+  </div>
+
+</div>
+  </ion-content>
+</ion-view>
