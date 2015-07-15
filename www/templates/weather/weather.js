@@ -3,7 +3,9 @@ angular.module('iw.weather', [])
   .controller('WeatherCtrl', function ($scope, $stateParams, $http, $ionicLoading){
 
     $scope.city = $stateParams.city;
-    $ionicLoading.show();
+    $ionicLoading.show({
+      template: 'Loading...'
+    });
 
     $http
       .get('/api/forecast/' + $stateParams.lat + ',' + $stateParams.long)
@@ -13,7 +15,6 @@ angular.module('iw.weather', [])
         $scope.summary = data.currently.summary;
         $scope.weekSummary = data.daily.summary
         $scope.icon = data.currently.icon
-
         $ionicLoading.hide();
         if($scope.icon === "clear-day"){
           $scope.pic = 'http://icons.wxug.com/i/c/i/clear.gif'
@@ -36,7 +37,6 @@ angular.module('iw.weather', [])
         } else if($scope.icon === 'partly-cloudy-night'){
           $scope.pic = 'http://icons.wxug.com/i/c/i/nt_mostlysunny.gif'
         }
-
         console.log (data);
       })
 
